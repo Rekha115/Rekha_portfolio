@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
+import ringImg from "@/assets/4S (1).png";
 
 const contactItems = [
   {
@@ -24,13 +25,19 @@ const contactItems = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="scroll-mt-24 py-16 px-4 max-w-xl mx-auto">
+    <section id="contact" className="scroll-mt-24 relative overflow-visible py-16 px-4 max-w-xl mx-auto">
+      <img
+        src={ringImg}
+        alt=""
+        className="absolute bottom-0 right-0 w-20 sm:w-28 md:w-40 z-[-1] opacity-100 blur-sm scale-125 sm:scale-100"
+        style={{ transform: 'rotate(-12deg)' }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="bg-white rounded-2xl shadow-md border border-pink-100 p-8 space-y-6"
+        className="relative z-10 bg-white rounded-2xl shadow-md border border-pink-100 p-8 space-y-6"
       >
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-2">

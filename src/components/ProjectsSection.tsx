@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projectsData } from "@/data/portfolio";
+import ringImg from "@/assets/4S (1).png";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="scroll-mt-24 py-20 px-4 max-w-4xl mx-auto">
+    <section id="projects" className="scroll-mt-24 relative overflow-visible py-20 px-4 max-w-4xl mx-auto">
+      <img
+        src={ringImg}
+        alt=""
+        className="absolute top-0 left-0 w-20 sm:w-28 md:w-40 z-[-1] opacity-100 blur-sm scale-125 sm:scale-100"
+        style={{ transform: 'rotate(6deg)' }}
+      />
+      <img
+        src={ringImg}
+        alt=""
+        className="absolute bottom-0 right-0 w-20 sm:w-28 md:w-40 z-[-1] opacity-100 blur-sm scale-125 sm:scale-100 hidden sm:block"
+        style={{ transform: 'rotate(-12deg)' }}
+      />
       <div className="mb-10">
         <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-foreground">
           Projects
@@ -17,7 +30,7 @@ const ProjectsSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="card-outer max-w-2xl mx-auto"
+        className="relative z-10 card-outer max-w-2xl mx-auto"
       >
         <div className="card-inner grid grid-cols-1 md:grid-cols-2 gap-3">
           {projectsData.map((project, i) => (
